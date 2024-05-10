@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Rs. Kencana</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-fZs5WwO6Zo7B+77fcGFNyE0RyvDeW5xmFRNxEo+3+G7rg2xD8YsYQ9uwo/KfzPjzoeA3Nvz6WxvP1GyiBvKJlw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('rs.kencana.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: calc(100% - 40px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: calc(100% - 40px);
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login Puskesmas</h2>
+    <form id="form" onsubmit="login()">
+      <input type="text" class="form-control" placeholder="Username" id="uname" required><br>
+      <input type="password" class="form-control" placeholder="Password" id="pswrd" required><br>
+      <button type="submit">Sign In</button>
+    </form>
+    <div class="social-auth-links text-center mb-3">
+      <p><b>- OR -</b></p>
+      <a href="#" class="btn btn-block btn-primary">
+        <i class="fab fa-facebook-f mr-2"></i> Sign in using Facebook
+      </a>
+      <a href="#" class="btn btn-block btn-danger">
+        <i class="fab fa-google-plus-g mr-2"></i> Sign in using Google+
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      event.preventDefault();
+      var pswrd = document.getElementById("pswrd").value;
+      var uname = document.getElementById("uname").value;
+
+      if (uname === "ima" && pswrd === "admin") {
+        alert("Selamat Datang Di Website Puskesmas");
+        window.location.href = "index.php";
+      } else {
+        alert("Login gagal. Mohon cek kembali username dan password.");
+      }
+    }
+  </script>
+</body>
+
+</html>
